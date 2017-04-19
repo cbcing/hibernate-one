@@ -1,0 +1,16 @@
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.scujcc.david.entity">
+    <class name="Order" table="Orders">
+        <id name="orderID" column="OrderID">
+            <generator class="native"></generator>
+        </id>
+        <property name="orderDate" column="OrderDate"></property>
+        <!-- 多个订单对应一个客户。 -->
+        <!-- 这里的column是一个外键，让hibernate知道如何去关联。 -->
+        <!-- lazy 表示：惰性加载。这里禁止惰性加载。 注：惰性加载是默认，因为它提高数据库的性能。 -->
+        <many-to-one name="customer" class="Customer" column="" lazy="false"></many-to-one>
+    </class>
+</hibernate-mapping>

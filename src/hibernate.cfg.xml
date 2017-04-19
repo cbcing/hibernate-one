@@ -11,7 +11,8 @@
     <property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
     <property name="current_session_context_class">thread</property>  <!-- 确保数据库访问是安全的 -->
 
-    <mapping resource="com/scujcc/david/entity/Customer.hbm.xml"></mapping>
+    <mapping resource="com/scujcc/david/entity/Customer.hbm.xml"/>
+    <mapping resource="com/scujcc/david/entity/Order.hbm.xml"/>
 
     <!-- DB schema will be updated if needed -->
     <!-- <property name="hbm2ddl.auto">update</property> -->
