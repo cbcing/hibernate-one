@@ -15,8 +15,15 @@
 <body>
     <table>
         <s:iterator value="#session.allCustomers">
+            <s:url id="queryOrders" action="queryCustomers">
+                <s:param name="customerID" value="customerID"/>
+            </s:url>
             <tr>
-                <td><s:property value="customerID"></s:property></td>
+                <td>
+                    <s:a href="%{queryOrders}">
+                        <s:property value="customerID"></s:property>
+                    </s:a>
+                </td>
                 <td><s:property value="companyName"></s:property></td>
                 <td><s:property value="contactTitle"></s:property></td>
                 <td><s:property value="contactName"></s:property></td>

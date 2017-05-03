@@ -7,8 +7,8 @@
         <id name="customerID" column="CustomerID">
             <generator class="native"></generator>
         </id>
-        <property name="companyName" column="CompanyName"></property>
-        <property name="contactName" column="ContactName"></property>
-        <property name="contactTitle" column="ContactTitle"></property>
+        <property name="companyName" column="CompanyName"/>
+        <property name="contactName" column="ContactName"/>
+        <property name="contactTitle" column="ContactTitle"/>
     </class>
 </hibernate-mapping>
