@@ -1,0 +1,15 @@
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.scujcc.david.entity.Product" table="Product">
+        <id name="productID" column="productID">
+            <generator class="native"/>
+        </id>
+        <property name="productName" column="ProductName"/>
+        <set name="orderDetails">
+            <key column="ProductID"></key>
+            <one-to-many class="com.scujcc.david.entity.OrderDetail"/>
+        </set>
+    </class>
+</hibernate-mapping>

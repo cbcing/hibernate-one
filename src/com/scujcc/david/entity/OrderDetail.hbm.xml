@@ -1,0 +1,14 @@
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.scujcc.david.entity.OrderDetail" table="[Order Details]">
+        <composite-id> <!-- 联合主键 -->
+            <key-many-to-one name="order" class="com.scujcc.david.entity.Order" column="OrderID" lazy="false"/>
+            <key-many-to-one name="product" class="com.scujcc.david.entity.Product" column="ProductID" lazy="false"/>
+        </composite-id>
+        <property name="unitPrice" column="UnitPrice"/>
+        <property name="quantity" column="Quantity"/>
+        <property name="discount" column="Discount"/>
+    </class>
+</hibernate-mapping>

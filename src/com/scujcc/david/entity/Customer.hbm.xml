@@ -3,12 +3,17 @@
 	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping package="com.scujcc.david.entity">
-    <class name="Customer" table="Customers">
+    <class name="com.scujcc.david.entity.Customer" table="Customers">
         <id name="customerID" column="CustomerID">
             <generator class="native"></generator>
         </id>
         <property name="companyName" column="CompanyName"/>
         <property name="contactName" column="ContactName"/>
         <property name="contactTitle" column="ContactTitle"/>
+        <set name="orders" lazy="false"> <!-- 关闭惰性加载 -->
+            <!-- Orders表中的外键(这里也是Orders中的主键) -->
+            <key column="CustomerID"/>
+            <one-to-many class="Order"/>
+        </set>
     </class>
 </hibernate-mapping>

@@ -1,17 +1,30 @@
 package com.scujcc.david.entity;
 
-import com.sun.org.apache.xpath.internal.operations.Or;
-
-import java.util.List;
+import java.util.Set;
 
 /**
  * Created by David on 3/22/17.
+ */
+
+/*
+ * Customers--(1,n)--Orders---(1,n)--OrderDetail-(n,1)-Product.
+ * from left to right.
  */
 public class Customer {
     private String CustomerID;
     private String companyName;
     private String contactTitle;
     private String contactName;
+
+    private Set<Order> orders;
+
+    public Set<Order> getOrders() {
+        return orders;
+    }
+
+    public void setOrders(Set<Order> orders) {
+        this.orders = orders;
+    }
 
     public String getCustomerID() {
         return CustomerID;

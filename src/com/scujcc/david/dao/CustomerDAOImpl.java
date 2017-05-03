@@ -17,8 +17,8 @@ public class CustomerDAOImpl implements CustomerDAO {
         Session session = HibernateUtil.getSessionFactory().getCurrentSession();
         session.beginTransaction();
         //创建一个查询，但是查询不是面对数据库，而是面对对象的。而Hibernate的作用就是把面向对象的查询转化成面向数据库的查询。
-        Query query = session.createQuery("from Customer ");
-        List list = query.list();
+        Query query = session.createQuery("from Customer");
+        List<Customer> list = query.list();
         //提交。
         HibernateUtil.getSessionFactory().getCurrentSession().getTransaction().commit();
         return list;

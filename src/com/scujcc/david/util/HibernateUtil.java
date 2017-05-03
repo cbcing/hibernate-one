@@ -30,4 +30,20 @@ public class HibernateUtil {
     public static SessionFactory getSessionFactory(){
         return sessionFactory;
     }
+
+
+//    private static final SessionFactory sessionFactory = buildSessionFactory();
+//    private static SessionFactory buildSessionFactory() {
+//        try {
+//            Configuration configuration = new Configuration().configure();
+//            return configuration.buildSessionFactory( new StandardServiceRegistryBuilder().applySettings( configuration.getProperties() ).build() );
+//        }
+//        catch (Throwable ex) {
+//            throw new ExceptionInInitializerError(ex);
+//        }
+//    }
+//
+//    public static SessionFactory getSessionFactory() {
+//        return sessionFactory;
+//    }
 }

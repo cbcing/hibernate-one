@@ -5,12 +5,17 @@
 <hibernate-mapping package="com.scujcc.david.entity">
     <class name="Order" table="Orders">
         <id name="orderID" column="OrderID">
-            <generator class="native"></generator>
+            <generator class="native"/>
         </id>
-        <property name="orderDate" column="OrderDate"></property>
+        <property name="orderDate" column="OrderDate"/>
         <!-- 多个订单对应一个客户。 -->
         <!-- 这里的column是一个外键，让hibernate知道如何去关联。 -->
         <!-- lazy 表示：惰性加载。这里禁止惰性加载。 注：惰性加载是默认，因为它提高数据库的性能。 -->
-        <many-to-one name="customer" class="Customer" column="" lazy="false"></many-to-one>
+        <many-to-one name="customer" class="Customer" lazy="false"/>
+
+        <set name="orderDetails" lazy="false">
+            <key column="OrderID"/>
+            <one-to-many class="OrderDetail"/>
+        </set>
     </class>
 </hibernate-mapping>
