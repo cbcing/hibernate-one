@@ -13,4 +13,5 @@ import java.util.List;
  */
 public interface CustomerDAO {
     public List<Customer> getAllCustomers();
+    public Customer selectCustomer(String CustomerID);
 }

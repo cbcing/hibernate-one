@@ -23,4 +23,16 @@ public class CustomerDAOImpl implements CustomerDAO {
         HibernateUtil.getSessionFactory().getCurrentSession().getTransaction().commit();
         return list;
     }
+
+    @Override
+    public Customer selectCustomer(String customerID) {
+        Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+        session.beginTransaction();
+        Query query = session.createQuery("from Customer  where customerID = ?");
+        query.setString(1, customerID);
+//        query.setParameter(1, customerID);
+        Customer customer = (Customer) query.uniqueResult();
+        session.getTransaction().commit();
+        return customer;
+    }
 }
