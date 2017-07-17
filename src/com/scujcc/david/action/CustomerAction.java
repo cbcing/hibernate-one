@@ -13,7 +13,7 @@ import java.util.List;
  */
 public class CustomerAction extends ActionSupport {
 
-    private String customerID;
+    private String customerID;	//cbc
 
     public String getCustomerID() {
         return customerID;
